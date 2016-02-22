@@ -3,6 +3,8 @@ var fs = require('fs');
 var express = require("express");
 var app     = express();
 
+var path    = require("path");
+
 var bodyParser = require('body-parser')
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
@@ -61,7 +63,7 @@ function _checkCategory(cat){
 /**
  * GET function to get all the categories
  */
-app.get('/categories',function(req,res){
+app.get('/api/categories',function(req,res){
     res.status(200).jsonp(categories);
 });
 
@@ -69,21 +71,29 @@ app.get('/categories',function(req,res){
 /**
  * POST function that return all the boards based on the category passed
  */
-app.post('/boards',function(req,res){
+app.post('/api/boards',function(req,res){
+    
     var category = req.body.category;
+    console.log(category);
     if(category){
         if(!isNaN(category)){            
             if(_checkCategory(category)){
                 res.status(200).jsonp(boards.filter(_filterByCategories(category)).sort(_compareDefault));    
             }else{
-                res.status(500).jsonp(error:true,message:'This category does not exist.');    
+                res.status(500).jsonp({error:true,message:'This category does not exist.'});    
             }
         }else{
-            res.status(500).jsonp(error:true,message:'Category field is not a number.');    
+            res.status(500).jsonp({error:true,message:'Category field is not a number.'});    
         }
     }else{
-        res.status(500).jsonp(error:true,message:'Category field is missing. Please check your POST call.');
+        res.status(500).jsonp({error:true,message:'Category field is missing. Please check your POST call.'});
     }
+});
+
+
+app.get('/',function(req,res){
+	res.sendFile(path.join(__dirname+'/public/view/index.html'));
+	//__dirname : It will resolve to your project folder.
 });
 
 app.listen(3000);

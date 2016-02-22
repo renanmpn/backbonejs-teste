@@ -14,9 +14,11 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 
 app.use(express.static(__dirname + '/public'));
 
+//Reading the data files
 var categories = JSON.parse(fs.readFileSync('./data/categories.json', 'utf8'));
 var boards = JSON.parse(fs.readFileSync('./data/boards.json', 'utf8'));
 
+//Sort category by name
 categories.sort(_compareName);
 
 function _compareName(a,b) {
@@ -27,6 +29,7 @@ function _compareName(a,b) {
   else 
     return 0;
 }
+
 
 function _compareDefault(a,b){
     if(a.default == true && b.default == false){
@@ -69,7 +72,7 @@ app.get('/api/categories',function(req,res){
 
 
 /**
- * POST function that return all the boards based on the category passed
+ * GET function that return all the boards based on the category passed
  */
 app.get('/api/boards/:category',function(req,res){
     
@@ -78,7 +81,8 @@ app.get('/api/boards/:category',function(req,res){
     if(category){
         if(!isNaN(category)){            
             if(_checkCategory(category)){
-                res.status(200).jsonp(boards.filter(_filterByCategories(category)).sort(_compareDefault));    
+                //It will filter the category by the Id and sort putting the default true on top   
+                res.status(200).jsonp(boards.filter(_filterByCategories(category)).sort(_compareDefault)); 
             }else{
                 res.status(500).jsonp({error:true,message:'This category does not exist.'});    
             }
@@ -94,6 +98,11 @@ app.get('/api/boards/:category',function(req,res){
 
 
 app.get('/',function(req,res){
+	res.sendFile(path.join(__dirname+'/public/view/index.html'));
+	//__dirname : It will resolve to your project folder.
+});
+
+app.get('/index.html',function(req,res){
 	res.sendFile(path.join(__dirname+'/public/view/index.html'));
 	//__dirname : It will resolve to your project folder.
 });

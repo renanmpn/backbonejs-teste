@@ -1,5 +1,4 @@
-
-
+//Category Model and Collection
 var Category = Backbone.Model.extend();
 
 var Categories = Backbone.Collection.extend({
@@ -8,7 +7,7 @@ var Categories = Backbone.Collection.extend({
 });
 
 
-
+//Category View to fill the select input
 var CategoryView = Backbone.View.extend({
     tagName: "option",
 
@@ -40,14 +39,14 @@ var CategoriesView = Backbone.View.extend({
     }
 });
 
-
+//Board Model and Collection
 var Board = Backbone.Model.extend({urlRoot:'/api/boards'});
 var Boards = Backbone.Collection.extend({
     model: Board
 });
 
 
-
+//Board View to fill the select input
 var BoardView = Backbone.View.extend({
     tagName: "option",
 
@@ -101,7 +100,7 @@ var BoardsView = Backbone.View.extend({
 
 
 
-
+//Call the function to fill the select
 var categories = new Categories();
 categories.fetch({
     success: function(){
@@ -114,7 +113,7 @@ categories.fetch({
 var boardsView = new BoardsView({el: $("#board"),collection: new Boards()});
 
 
-  
+// Listen the click event to change the layout  
 var ChangeView = Backbone.View.extend({
     events: {
     "click": "changeLayout"
@@ -122,12 +121,16 @@ var ChangeView = Backbone.View.extend({
     
     changeLayout: function(){
         
+        //Getting the Id of Category and Board
         var boardId = $("#board").val();
         var categoryId = $("#category").val();
         
         if(boardId){
+            //Finding the models
             var board = boardsView.collection.where({id:parseInt(boardId)})[0];
             var category = categories.where({id:parseInt(categoryId)})[0];    
+            
+            //Setting the layout
             $("#main").text(board.get("name"));
             $("#second").text(category.get("name"));
             if(board.get("background_image")){

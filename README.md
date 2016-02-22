@@ -10,7 +10,7 @@ This is a repository that show how can I code and get the Job in Scup|Sprinklr ;
 
 ## How do I get set up? ##
 
-To run this application you will need Node.JS installed in your computer. To do this program I have used Node.JS version v0.12.4. The machine was a MacBook Pro with OS X El Capitan
+To run this application you will need Node.JS installed in your computer. 
 
 In order to install the Node.js you can access [Node.js Website](https://nodejs.org/en/)
 

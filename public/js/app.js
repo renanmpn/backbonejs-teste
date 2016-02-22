@@ -1,3 +1,5 @@
+
+
 var Category = Backbone.Model.extend();
 
 var Categories = Backbone.Collection.extend({
@@ -106,3 +108,33 @@ var boardsView = new BoardsView({el: $("#board"),collection: new Boards()});
 
 
   
+var ChangeView = Backbone.View.extend({
+    events: {
+    "click": "changeLayout"
+    },
+    
+    changeLayout: function(){
+        
+        var boardId = $("#board").val();
+        var categoryId = $("#category").val();
+        
+        if(boardId){
+            var board = boardsView.collection.where({id:parseInt(boardId)})[0];
+            var category = categories.where({id:parseInt(categoryId)})[0];    
+            $("#main").text(board.get("name"));
+            $("#second").text(category.get("name"));
+            if(board.get("background_image")){
+                $(".board").css("background-image", "url("+ board.get("background_image") + ")");
+                $("#main,#second").css("color","white");
+            }else{
+                $(".board").css("background-image", "none");
+                $("#main,#second").css("color","black");
+            }
+        }
+    }
+});
+
+
+
+
+var changeView = new ChangeView({ el: $('#change') });

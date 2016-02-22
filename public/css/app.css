@@ -15,10 +15,23 @@
     margin-left: 5%;
     margin-right: 5%;
     position: relative;
-    background-image: url("http://res.cloudinary.com/skore-production/image/upload/taa1ivu8fd1gzjbowa4w");
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
     z-index: 1;
 }
 
 .row{
     margin-top: 10px;
+}
+
+#info{
+    z-index: 3;
+    margin-left: 5%;
+    margin-top: 1%;
+    position: absolute;
+}
+
+#main, #second{
+    color: black;
 }

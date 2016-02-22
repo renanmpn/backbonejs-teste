@@ -91,6 +91,8 @@ app.get('/api/boards/:category',function(req,res){
 });
 
 
+
+
 app.get('/',function(req,res){
 	res.sendFile(path.join(__dirname+'/public/view/index.html'));
 	//__dirname : It will resolve to your project folder.

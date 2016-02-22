@@ -1,0 +1,121 @@
+[
+    {
+        "id": 4687,
+        "name": "Conteúdos Extras",
+        "category_id": 1177,
+        "default": true,
+        "background_image": "http://res.cloudinary.com/skore-production/image/upload/c_fill,dpr_2.0,f_auto,w_980/d6sndbxfuuccttm5uwbb"
+    },
+    {
+        "id": 4688,
+        "name": "Dev",
+        "category_id": 1177,
+        "default": false,
+        "background_image": "http://res.cloudinary.com/skore-production/image/upload/taa1ivu8fd1gzjbowa4w"
+    },
+    {
+        "id": 4689,
+        "name": "Business",
+        "category_id": 1177,
+        "default": false,
+        "background_image": "https://media.giphy.com/media/3oEduYENfPAspeUuLC/giphy.gif"
+    },
+    {
+        "id": 4692,
+        "name": "Produto",
+        "category_id": 1177,
+        "default": false,
+        "background_image": "https://media.giphy.com/media/hD52jjb1kwmlO/giphy.gif"
+    },
+    {
+        "id": 5976,
+        "name": "Vídeo",
+        "category_id": 1545,
+        "default": true,
+        "background_image": "https://media.giphy.com/media/oDDs67mo76beM/giphy.gif"
+    },
+    {
+        "id": 5977,
+        "name": "Apresentação",
+        "category_id": 1545,
+        "default": false,
+        "background_image": "https://media.giphy.com/media/l41lHQIJNHyvBPYtO/giphy.gif"
+    },
+    {
+        "id": 5989,
+        "name": "Link",
+        "category_id": 1545,
+        "default": false,
+        "background_image": null
+    },
+    {
+        "id": 5994,
+        "name": "Imagens",
+        "category_id": 1545,
+        "default": false,
+        "background_image": null
+    },
+    {
+        "id": 5999,
+        "name": "Textos",
+        "category_id": 1545,
+        "default": false,
+        "background_image": null
+    },
+    {
+        "id": 5998,
+        "name": "Arquivos",
+        "category_id": 1545,
+        "default": false,
+        "background_image": null
+    },
+    {
+        "id": 3464,
+        "name": "Como nosso cérebro aprende?",
+        "category_id": 270,
+        "default": false,
+        "background_image": null
+    },
+    {
+        "id": 4780,
+        "name": "Como será a educação do futuro?",
+        "category_id": 270,
+        "default": false,
+        "background_image": null
+    },
+    {
+        "id": 4791,
+        "name": "Por que o treinamento convencional não engaja?",
+        "category_id": 270,
+        "default": false,
+        "background_image": null
+    },
+    {
+        "id": 4792,
+        "name": "O que é a sala de aula invertida?",
+        "category_id": 270,
+        "default": false,
+        "background_image": null
+    },
+    {
+        "id": 4793,
+        "name": "Gamification pode gerar engajamento nas empresas?",
+        "category_id": 270,
+        "default": false,
+        "background_image": null
+    },
+    {
+        "id": 1500,
+        "name": "Conteúdos Extras",
+        "category_id": 270,
+        "default": true,
+        "background_image": null
+    },
+    {
+        "id": 6190,
+        "name": "Tools for Teachers",
+        "category_id": 270,
+        "default": false,
+        "background_image": null
+    }
+]

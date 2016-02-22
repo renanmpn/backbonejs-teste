@@ -1,0 +1,27 @@
+{
+  "name": "backbonejs-teste",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renanmpn/backbonejs-teste.git"
+  },
+  "keywords": [
+    "backbone.js",
+    "node.js"
+  ],
+  "author": "Renan Monteiro Pinto Neto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/renanmpn/backbonejs-teste/issues"
+  },
+  "homepage": "https://github.com/renanmpn/backbonejs-teste#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4"
+  }
+}

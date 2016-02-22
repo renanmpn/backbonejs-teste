@@ -71,9 +71,9 @@ app.get('/api/categories',function(req,res){
 /**
  * POST function that return all the boards based on the category passed
  */
-app.post('/api/boards',function(req,res){
+app.get('/api/boards/:category',function(req,res){
     
-    var category = req.body.category;
+    var category = req.params.category;
     console.log(category);
     if(category){
         if(!isNaN(category)){            

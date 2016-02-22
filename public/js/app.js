@@ -59,8 +59,15 @@ var BoardView = Backbone.View.extend({
 });
 
 var BoardsView = Backbone.View.extend({
-    setSelectedId: function(categoryId) {        
-        this.setCategoryId(categoryId);
+    setSelectedId: function(categoryId) {
+        if(categoryId){
+            this.setCategoryId(categoryId);    
+        }else{
+            this.collection.reset();
+            this.collection.add({id:"",name:"Selecione um board"})
+            this.render();
+        }        
+        
     },
     setCategoryId: function(countryId) {
         this.populateFrom("/api/boards/"+countryId);
